@@ -1,24 +1,34 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "veekthoven/laravel-cashier-bachs",
+    "description": "Laravel Cashier Bachs provides an expressive, fluent interface to Bachs' subscription billing services.",
     "keywords": [
-        ":vendor_name",
+        "veekthoven",
         "laravel",
-        ":package_slug"
+        "laravel-cashier-bachs",
+        "cashier",
+        "bachs",
+        "subscription",
+        "billing",
+        "payment",
+        "laravel-cashier"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/veekthoven/laravel-cashier-bachs",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Victor Abbah Nkoms",
+            "email": "holla@veekthoven.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.4",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^11.0||^12.0||^13.0"
+        "illuminate/contracts": "^11.0||^12.0||^13.0",
+        "illuminate/database": "^11.0||^12.0||^13.0",
+        "illuminate/http": "^11.0||^12.0||^13.0",
+        "illuminate/routing": "^11.0||^12.0||^13.0",
+        "illuminate/support": "^11.0||^12.0||^13.0"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -30,18 +40,16 @@
         "pestphp/pest-plugin-laravel": "^4.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "spatie/laravel-ray": "^1.35"
+        "phpstan/phpstan-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Veekthoven\\CashierBachs\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Veekthoven\\CashierBachs\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,11 +71,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "Veekthoven\\CashierBachs\\CashierServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
