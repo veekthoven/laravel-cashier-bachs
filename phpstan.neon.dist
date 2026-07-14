@@ -8,3 +8,18 @@ parameters:
         - config
         - database
     tmpDir: build/phpstan
+    ignoreErrors:
+        # Package config files legitimately call env(); they are merged into the
+        # application config, which is what gets cached.
+        -
+            identifier: larastan.noEnvCallsOutsideOfConfig
+            path: config/cashier.php
+        # The Billable trait and its concerns are the package's public API and
+        # are consumed by the application's own models.
+        -
+            identifier: trait.unused
+        # The billable model is application-defined and uses the Billable trait,
+        # so its trait methods cannot be statically resolved here.
+        -
+            message: '#Call to an undefined method Illuminate\\Database\\Eloquent\\Model::bachsIdOrCreate\(\)#'
+            path: src/SubscriptionBuilder.php
